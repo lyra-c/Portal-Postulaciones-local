@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="mt-4 mb-2">Ingresar</h1>
+
+  <h2>Credenciales de acceso:</h2>
+  <br>
+  <div>
+    <p>Email administrador (Esteban): esteban@jefe.com</p>
+    <p>Contraseña: 123456</p>
+  </div>
+
+  <div class="my-2">
+    <p>Email usuario normal: user1@user.com</p>
+    <p>Contraseña: 123456</p>
+  </div>
+
+  <p class="my-2">(Hay desde user1 hasta user5, con la misma contraseña para todos)</p>
+
+
+
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-2">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :contraseña %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group my-2">
+            <%= f.check_box :remember_me %>
+            <%= f.label :recordarme %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Ingresar", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

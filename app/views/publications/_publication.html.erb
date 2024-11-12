@@ -1,0 +1,33 @@
+<div id="<%= dom_id publication %>">
+  <div class="row">
+    <div class="col-xs-6 col-md-6">
+      <p class="mb-2">
+        <% publication.images.each do |img| %>
+          <%= image_tag img, style: "max-width: 32rem", class: "me-2 mb-2" %>
+        <% end %>
+      </p>
+    </div>
+
+    <div class="col-xs-6 col-md-6 pt-2">
+      <p class="fs-1">
+        <strong><%= publication.name %></strong>        
+      </p>
+    
+      <p>
+        <strong>Descripción del puesto:</strong>
+        <%= publication.description %>
+      </p>
+
+      <% if user_signed_in? && current_user.role == "admin" %>
+        <p><strong>Usuarios postulados:</strong></p>
+        <% publication.users.each do |user| %>
+          <li>
+            <%= user.name %>
+          </li>
+        <% end %>
+  
+      <% end %>
+    </div>
+  
+  </div>
+</div>

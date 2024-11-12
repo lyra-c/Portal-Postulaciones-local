@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ body {
+    font-family: 'Calistoga', cursive;
+    background-color: #D3C4A7;
+ }
+
+
+ /* Cambia el color de fondo y el color de texto al hacer hover en los enlaces del navbar */
+.navbar-nav .nav-link:hover {
+   color: #30D5C8; /* Color de texto al hacer hover */
+   background-color: #393939; /* Color de fondo al hacer hover */
+   border-radius: 5px; /* Redondea las esquinas */
+   transition: background-color 0.3s ease, color 0.3s ease; /* Efecto de transición */
+ }
+ 
+ /* Cambia el color de texto para el enlace "Cerrar Sesión" */
+ .navbar-nav .nav-link.text-danger:hover {
+   color: #ff4c4c; /* Un tono de rojo más claro para el hover */
+   background-color: transparent;
+ }
+ 
+ /* Para el enlace de "Editar Perfil" en color info */
+ .navbar-nav .nav-link.text-info:hover {
+   color: #3bd1d1; /* Un tono de azul más claro */
+   background-color: transparent;
+ }
+ 
